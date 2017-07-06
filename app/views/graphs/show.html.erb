@@ -2,65 +2,147 @@
 
 
 <p>
+  <font size="6">
   <strong>Hems:</strong>
   <%= @graph.hems_id %>
+  </font>
 </p>
 
 <p>
+  <font size="6">
   <strong>Postal:</strong>
   <%= @graph.postal %>
+  </font>
 </p>
 
 <p>
-  <strong>Main:</strong>
-  <%= @graph.main %>
-</p>
-
-<p>
-  <strong>Solar generate:</strong>
-  <%= @graph.solar_generate %>
-</p>
-
-<p>
-  <strong>Solar sold:</strong>
-  <%= @graph.solar_sold %>
-</p>
-
-<p>
-  <strong>Battery charge:</strong>
-  <%= @graph.battery_charge %>
-</p>
-
-<p>
-  <strong>Battery discharge:</strong>
-  <%= @graph.battery_discharge %>
-</p>
-
-<p>
-  <strong>Fuel cell:</strong>
-  <%= @graph.fuel_cell %>
-</p>
-
-<p>
-  <strong>Gus:</strong>
-  <%= @graph.gus %>
-</p>
-
-<p>
-  <strong>Water:</strong>
-  <%= @graph.water %>
-</p>
-
-<p>
+  <font size="6">
   <strong>Start:</strong>
   <%= @graph.start %>
+  </font>
 </p>
 
 <p>
+  <font size="6">
   <strong>End:</strong>
   <%= @graph.end %>
+  </font>
 </p>
 
+<% graph_id=0 %>
+<p>
+  <font size="6">
+  <strong>Main:</strong>
+  <%= @graph.main %>
+  </font>
+</p>
+<p>
+  <% if @graph.main==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Solar generate:</strong>
+  <%= @graph.solar_generate %>
+  </font>
+</p>
+<p>
+  <% if @graph.solar_generate==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Solar sold:</strong>
+  <%= @graph.solar_sold %>
+  </font>
+</p>
+<p>
+  <% if @graph.solar_sold==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Battery charge:</strong>
+  <%= @graph.battery_charge %>
+  </font>
+</p>
+<p>
+  <% if @graph.battery_charge==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id +1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Battery discharge:</strong>
+  <%= @graph.battery_discharge %>
+  </font>
+</p>
+<p>
+  <% if @graph.battery_discharge==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Fuel cell:</strong>
+  <%= @graph.fuel_cell %>
+  </font>
+</p>
+<p>
+  <% if @graph.fuel_cell==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Gus:</strong>
+  <%= @graph.gus %>
+  </font>
+</p>
+<p>
+  <% if @graph.gus==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<p>
+  <font size="6">
+  <strong>Water:</strong>
+  <%= @graph.water %>
+  </font>
+</p>
+<p>
+  <% if @graph.water==true then %>
+  <%= line_chart @chart_data[graph_id][:data] %>
+  <% graph_id = graph_id + 1 %>
+  <% else %>
+  <% end %>
+</p>
+
+<center><strong><font size="8">All</font></strong></center>
 <%= line_chart @chart_data.each do |mau|
   {:name => mau.name, :data => mau.data}
 end %>
