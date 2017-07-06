@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hems_id: MyString
+  postal: MyString
+
+two:
+  hems_id: MyString
+  postal: MyString

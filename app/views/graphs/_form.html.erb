@@ -1,0 +1,77 @@
+<%= form_with(model: graph, local: true) do |form| %>
+  <% if graph.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(graph.errors.count, "error") %> prohibited this graph from being saved:</h2>
+
+      <ul>
+      <% graph.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hems_id %>
+    <%= form.collection_select :hems_id, House.all, :hems_id, :hems_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal %>
+    <%= form.text_field :postal, id: :graph_postal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main %>
+    <%= form.check_box :main, id: :graph_main %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solar_generate %>
+    <%= form.check_box :solar_generate, id: :graph_solar_generate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solar_sold %>
+    <%= form.check_box :solar_sold, id: :graph_solar_sold %>
+  </div>
+
+  <div class="field">
+    <%= form.label :battery_charge %>
+    <%= form.check_box :battery_charge, id: :graph_battery_charge %>
+  </div>
+
+  <div class="field">
+    <%= form.label :battery_discharge %>
+    <%= form.check_box :battery_discharge, id: :graph_battery_discharge %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fuel_cell %>
+    <%= form.check_box :fuel_cell, id: :graph_fuel_cell %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gus %>
+    <%= form.check_box :gus, id: :graph_gus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :water %>
+    <%= form.check_box :water, id: :graph_water %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start %>
+    <%= form.datetime_select :start, id: :graph_start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end %>
+    <%= form.datetime_select :end, id: :graph_end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

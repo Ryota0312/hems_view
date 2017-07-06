@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Hems:</strong>
+  <%= @graph.hems_id %>
+</p>
+
+<p>
+  <strong>Postal:</strong>
+  <%= @graph.postal %>
+</p>
+
+<p>
+  <strong>Main:</strong>
+  <%= @graph.main %>
+</p>
+
+<p>
+  <strong>Solar generate:</strong>
+  <%= @graph.solar_generate %>
+</p>
+
+<p>
+  <strong>Solar sold:</strong>
+  <%= @graph.solar_sold %>
+</p>
+
+<p>
+  <strong>Battery charge:</strong>
+  <%= @graph.battery_charge %>
+</p>
+
+<p>
+  <strong>Battery discharge:</strong>
+  <%= @graph.battery_discharge %>
+</p>
+
+<p>
+  <strong>Fuel cell:</strong>
+  <%= @graph.fuel_cell %>
+</p>
+
+<p>
+  <strong>Gus:</strong>
+  <%= @graph.gus %>
+</p>
+
+<p>
+  <strong>Water:</strong>
+  <%= @graph.water %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @graph.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @graph.end %>
+</p>
+
+<%= line_chart @chart_data.each do |mau|
+  {:name => mau.name, :data => mau.data}
+end %>
+
+<%= link_to 'Edit', edit_graph_path(@graph) %> |
+<%= link_to 'Back', graphs_path %>

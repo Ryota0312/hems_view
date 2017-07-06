@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Graphs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hems</th>
+      <th>Postal</th>
+      <th>Main</th>
+      <th>Solar generate</th>
+      <th>Solar sold</th>
+      <th>Battery charge</th>
+      <th>Battery discharge</th>
+      <th>Fuel cell</th>
+      <th>Gus</th>
+      <th>Water</th>
+      <th>Start</th>
+      <th>End</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graphs.each do |graph| %>
+      <tr>
+        <td><%= graph.hems_id %></td>
+        <td><%= graph.postal %></td>
+        <td><%= graph.main %></td>
+        <td><%= graph.solar_generate %></td>
+        <td><%= graph.solar_sold %></td>
+        <td><%= graph.battery_charge %></td>
+        <td><%= graph.battery_discharge %></td>
+        <td><%= graph.fuel_cell %></td>
+        <td><%= graph.gus %></td>
+        <td><%= graph.water %></td>
+        <td><%= graph.start %></td>
+        <td><%= graph.end %></td>
+        <td><%= link_to 'Show', graph %></td>
+        <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
+        <td><%= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Graph', new_graph_path %>

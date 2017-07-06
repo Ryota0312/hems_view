@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hems_id: MyString
+  postal: MyString
+  main: false
+  solar_generate: false
+  solar_sold: false
+  battery_charge: false
+  battery_discharge: false
+  fuel_cell: false
+  gus: false
+  water: false
+  start: 2017-07-04 23:14:45
+  end: 2017-07-04 23:14:45
+
+two:
+  hems_id: MyString
+  postal: MyString
+  main: false
+  solar_generate: false
+  solar_sold: false
+  battery_charge: false
+  battery_discharge: false
+  fuel_cell: false
+  gus: false
+  water: false
+  start: 2017-07-04 23:14:45
+  end: 2017-07-04 23:14:45
