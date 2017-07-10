@@ -10,6 +10,7 @@ class GraphsController < ApplicationController
   # GET /graphs/1
   # GET /graphs/1.json
   def show
+    @graph.postal = House.where("hems_id is ?", @graph.hems_id).first.postal
     @chart_data = []
     if @graph.main == true
       chart = []
